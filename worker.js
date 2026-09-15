@@ -9,21 +9,29 @@ export default {
 
       const responseTime = Date.now() - start;
 
-      console.log(JSON.stringify({
+      const result = {
         service: "portfolio",
         status: response.status,
-        responseTime: responseTime,
+        responseTime,
         operational: response.ok,
         checkedAt: new Date().toISOString(),
-      }));
+      };
+
+      await env.KV.put("portfolio", JSON.stringify(result));
+
+      console.log(JSON.stringify(result));
 
     } catch (error) {
-      console.log(JSON.stringify({
+      const result = {
         service: "portfolio",
         operational: false,
         error: error.message,
         checkedAt: new Date().toISOString(),
-      }));
+      };
+
+      await env.KV.put("portfolio", JSON.stringify(result));
+
+      console.log(JSON.stringify(result));
     }
   },
 };
