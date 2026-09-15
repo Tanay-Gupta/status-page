@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta
+    name="description"
+    content="Status of Tanay Gupta's online services."
+  >
+
+  <title>Status — Tanay Gupta</title>
+
+  <style>
+
+    /* =========================
+       BASE
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: #0a0a0a;
+    }
+
+    body {
+      color: #f5f5f5;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      width: 100%;
+      max-width: 680px;
+
+      margin: 0 auto;
+
+      padding:
+        max(32px, env(safe-area-inset-top))
+        24px
+        max(40px, env(safe-area-inset-bottom));
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 88px;
+    }
+
+    .brand {
+      color: #f5f5f5;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      letter-spacing: -0.02em;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+
+      min-height: 40px;
+      padding: 8px 0;
+
+      color: #737373;
+
+      font-size: 13px;
+
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+    .back:hover {
+      color: #f5f5f5;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+
+      color: #737373;
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 620px;
+
+      margin: 0;
+
+      color: #f5f5f5;
+
+      font-size: clamp(40px, 8vw, 54px);
+
+      font-weight: 500;
+
+      letter-spacing: -0.06em;
+
+      line-height: 0.98;
+    }
+
+    .description {
+      max-width: 430px;
+
+      margin-top: 20px;
+
+      color: #737373;
+
+      font-size: 14px;
+
+      line-height: 1.65;
+    }
+
+    /* =========================
+       OVERALL STATUS
+    ========================= */
+
+    .overall {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      min-height: 56px;
+
+      border-bottom: 1px solid #242424;
+    }
+
+    .status-dot {
+      flex: 0 0 auto;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #4ade80;
+
+      box-shadow:
+        0 0 0 4px rgba(74, 222, 128, 0.08);
+    }
+
+    .overall-text {
+      color: #e5e5e5;
+
+      font-size: 14px;
+
+      font-weight: 500;
+    }
+
+    /* =========================
+       SERVICE
+    ========================= */
+
+    .service {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      min-height: 88px;
+
+      border-bottom: 1px solid #242424;
+    }
+
+    .service-left {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      min-width: 0;
+    }
+
+    .service-indicator {
+      flex: 0 0 auto;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: #4ade80;
+    }
+
+    .service-info {
+      min-width: 0;
+    }
+
+    .service-name {
+      color: #e5e5e5;
+
+      font-size: 15px;
+
+      font-weight: 500;
+
+      letter-spacing: -0.01em;
+    }
+
+    .service-url {
+      max-width: 100%;
+
+      margin-top: 5px;
+
+      overflow: hidden;
+
+      color: #525252;
+
+      font-size: 12px;
+
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+    }
+
+    .service-url a {
+      color: inherit;
+
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+    .service-url a:hover {
+      color: #a3a3a3;
+    }
+
+    .operational {
+      flex: 0 0 auto;
+
+      color: #737373;
+
+      font-size: 13px;
+
+      white-space: nowrap;
+    }
+
+    /* =========================
+       CAT
+    ========================= */
+
+    .cat-section {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      margin-top: 72px;
+
+      margin-bottom: 4px;
+    }
+
+    .cat {
+      position: relative;
+
+      width: 58px;
+      height: 42px;
+
+      opacity: 0.72;
+    }
+
+    .cat-face {
+      position: absolute;
+
+      left: 9px;
+      bottom: 0;
+
+      width: 40px;
+      height: 34px;
+
+      border: 1.5px solid #737373;
+
+      border-radius:
+        48%
+        48%
+        45%
+        45%;
+    }
+
+    .cat-ear {
+      position: absolute;
+
+      top: 2px;
+
+      width: 17px;
+      height: 17px;
+
+      border-top: 1.5px solid #737373;
+
+      border-left: 1.5px solid #737373;
+
+      transform: rotate(45deg);
+    }
+
+    .cat-ear.left {
+      left: 9px;
+    }
+
+    .cat-ear.right {
+      right: 9px;
+
+      transform: rotate(45deg);
+    }
+
+    .eye {
+      position: absolute;
+
+      top: 14px;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: #737373;
+    }
+
+    .eye.left {
+      left: 11px;
+    }
+
+    .eye.right {
+      right: 11px;
+    }
+
+    .nose {
+      position: absolute;
+
+      left: 18px;
+      top: 20px;
+
+      width: 4px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: #737373;
+    }
+
+    .cat-message {
+      margin-top: 14px;
+
+      color: #525252;
+
+      font-size: 11px;
+
+      letter-spacing: 0.02em;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 16px;
+
+      margin-top: 32px;
+
+      color: #525252;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      header {
+        margin-bottom: 72px;
+      }
+
+      .intro {
+        margin-bottom: 42px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 48px);
+
+        line-height: 1;
+      }
+
+      .description {
+        max-width: 340px;
+
+        margin-top: 18px;
+
+        font-size: 13px;
+      }
+
+      .overall {
+        min-height: 52px;
+      }
+
+      .service {
+        min-height: 82px;
+
+        gap: 12px;
+      }
+
+      .service-left {
+        gap: 12px;
+      }
+
+      .operational {
+        font-size: 12px;
+      }
+
+      .cat-section {
+        margin-top: 60px;
+      }
+
+      footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+      }
+    }
+
+    /* =========================
+       VERY SMALL PHONES
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .page {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      header {
+        margin-bottom: 60px;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .back {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .service {
+        align-items: flex-start;
+
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
+
+      .operational {
+        padding-top: 2px;
+      }
+
+      .cat-section {
+        margin-top: 52px;
+      }
+    }
+
+    /* =========================
+       REDUCED MOTION
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div class="brand">
+        Tanay Gupta
+      </div>
+
+      <a
+        class="back"
+        href="https://tanaygupta.com"
+      >
+        tanaygupta.com ↗
+      </a>
+
+    </header>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <div class="eyebrow">
+        System Status
+      </div>
+
+      <h1>
+        Everything is
+        <br>
+        operational.
+      </h1>
+
+      <div class="description">
+        Current status of Tanay Gupta's online services.
+      </div>
+
+    </section>
+
+
+    <!-- STATUS -->
+
+    <section>
+
+      <!-- Overall status -->
+
+      <div class="overall">
+
+        <span class="status-dot"></span>
+
+        <span class="overall-text">
+          All systems operational
+        </span>
+
+      </div>
+
+
+      <!-- Portfolio -->
+
+      <div class="service">
+
+        <div class="service-left">
+
+          <span class="service-indicator"></span>
+
+          <div class="service-info">
+
+            <div class="service-name">
+              Portfolio
+            </div>
+
+            <div class="service-url">
+
+              <a
+                href="https://tanaygupta.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                tanaygupta.com
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="operational">
+          Operational
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CAT -->
+
+    <div class="cat-section">
+
+      <div
+        class="cat"
+        aria-label="Cat"
+      >
+
+        <span class="cat-ear left"></span>
+
+        <span class="cat-ear right"></span>
+
+        <span class="cat-face">
+
+          <span class="eye left"></span>
+
+          <span class="eye right"></span>
+
+          <span class="nose"></span>
+
+        </span>
+
+      </div>
+
+
+      <div class="cat-message">
+        The cat approves.
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <div>
+        Last checked · Just now
+      </div>
+
+      <div>
+        Powered by Tanay Gupta
+      </div>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
