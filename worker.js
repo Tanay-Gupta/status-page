@@ -1,4 +1,10 @@
 export default {
+  async fetch(request, env, ctx) {
+    return new Response("Tanay Status Monitor is running.", {
+      status: 200,
+    });
+  },
+
   async scheduled(event, env, ctx) {
     const start = Date.now();
 
